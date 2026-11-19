@@ -24,6 +24,11 @@ if("IntersectionObserver" in window){
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15});
 els.forEach(function(el){io.observe(el)});
 }else{els.forEach(function(el){el.classList.add("in")})}
+var mb=document.querySelector(".mnu"),mm=document.getElementById("mm");
+function mset(o){b.classList.toggle("mo",o);mb.setAttribute("aria-expanded",o);mb.setAttribute("aria-label",o?"Menüyü kapat":"Menüyü aç")}
+if(mb){mb.addEventListener("click",function(){mset(!b.classList.contains("mo"))});
+mm.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){mset(false)})});
+addEventListener("keydown",function(e){if(e.key==="Escape")mset(false)})}
 var f=document.getElementById("qf");
 if(f)f.addEventListener("submit",function(e){e.preventDefault();var d=new FormData(f);
 var body="Ad: "+d.get("ad")+"\nE-posta: "+d.get("mail")+"\nHizmet: "+d.get("hizmet")+"\n\n"+d.get("mesaj");
