@@ -1,8 +1,9 @@
 (function(){
 var b=document.body;
 function go(){b.classList.add("ready")}
-if(document.readyState==="complete")setTimeout(go,1500);else window.addEventListener("load",function(){setTimeout(go,1500)});
-setTimeout(go,3200);
+var t0=Date.now();function soon(){setTimeout(go,Math.max(0,650-(Date.now()-t0)))}
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(soon);else soon();
+setTimeout(go,1200);
 var hd=document.getElementById("hd");
 function sc(){hd.classList.toggle("solid",window.scrollY>40)}
 window.addEventListener("scroll",sc,{passive:true});sc();
