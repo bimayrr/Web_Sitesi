@@ -7,10 +7,15 @@
 <meta name="theme-color" content="#0C0607">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <title>KVKK Aydınlatma Metni | Bimayr</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter+Tight:wght@600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500 700;font-display:swap;src:url(assets/fonts/inter-tight-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500 700;font-display:swap;src:url(assets/fonts/inter-tight-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/manrope-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/manrope-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/fraunces-bma.woff) format('woff')}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/fraunces-slogan.woff) format('woff')}
 :root{--bg:#F4EDE0;--ink:#15090C;--muted:#6B5A5C;--line:#DDD0BC;--wine:#7A1730;--wine2:#A62644;--dk:#0C0607;--cream:#F4EDE0;--cm:#B9A9A0}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 Manrope,system-ui,sans-serif}
@@ -74,7 +79,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
 <div class="box">Başvurularınızı <a href="mailto:bimayrr@gmail.com?subject=KVKK%20ba%C5%9Fvurusu">bimayrr@gmail.com</a> adresine “KVKK başvurusu” konulu e-posta ile iletebilirsiniz. Başvurunuz en geç 30 gün içinde ücretsiz olarak sonuçlandırılır.</div>
 
 <h2>8. Çerezler</h2>
-<p>Sitemiz reklam veya takip amaçlı çerez kullanmaz. Yazı tipleri Google Fonts üzerinden yüklenir. Bu sırada tarayıcınız Google sunucularına teknik bağlantı bilgileri (IP adresi gibi) iletebilir.</p>
+<p>Sitemiz reklam veya takip amaçlı çerez kullanmaz. Yazı tipleri kendi sunucumuzdan yüklenir; sitemiz üçüncü taraf bir hizmete bağlantı kurmaz.</p>
 </div></main>
 <footer><div class="wrap">© 2026 Bimayr · Apps &amp; Data Studio</div></footer>
 </body>

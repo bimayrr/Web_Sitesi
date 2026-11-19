@@ -23,9 +23,12 @@ Web_Sitesi/
 ├── css/style.css                 Renkler, yazı stilleri, animasyonlar
 ├── js/main.js                    Açılış, mobil menü, kaydırma animasyonları, teklif formu
 ├── assets/                       Logo dosyaları (SVG) ve favicon
+├── assets/fonts/                 Siteye gömülü yazı tipleri (Google’a bağlantı yok)
 ├── projeler/                     6 ürün konseptinin detay sayfaları ve proje.css
 ├── araclar/projeler_uret.py      Proje kartlarını ve detay sayfalarını üreten betik
+├── araclar/surumle.py            CSS/JS bağlantılarına sürüm ekler (önbellek için)
 ├── google7608ff42e5855037.html   Google Search Console doğrulama dosyası (silmeyin)
+├── vercel.json                   Önbellek süreleri (CSS, JS, yazı tipleri 1 yıl)
 ├── .vercelignore                 araclar/ klasörünün yayına çıkmasını engeller
 ├── .nojekyll
 └── README.md
@@ -45,9 +48,20 @@ Ana sayfadaki “Seçilmiş çalışmalar” kartları ve `projeler/` altındaki
    python araclar/projeler_uret.py .
    ```
 
-3. Değişen dosyaları GitHub’a gönderin. Vercel siteyi otomatik günceller.
+3. Ardından sürüm betiğini çalıştırın (aşağıya bakın).
+4. Değişen dosyaları GitHub’a gönderin. Vercel siteyi otomatik günceller.
 
 Betik `index.html` içindeki kart bölümünü ve `projeler/` klasörünü yeniden yazar. Bu alanlarda elle yapılan değişiklikler bir sonraki çalıştırmada kaybolur.
+
+## Önemli: CSS veya JS değiştirdikten sonra
+
+`css/style.css`, `js/main.js` ve `projeler/proje.css` ziyaretçinin tarayıcısında 1 yıl önbellekte tutulur (hız için). Değişikliğin herkese ulaşması için, bu dosyalardan birini değiştirdikten sonra şu komutu çalıştırın:
+
+```bash
+python araclar/surumle.py .
+```
+
+Betik, HTML’deki bağlantıların sonuna dosyanın içeriğine göre yeni bir `?v=...` sürümü yazar. Böylece tarayıcı yeni dosyayı indirir. Çalıştırılmazsa eski ziyaretçiler eski stili görmeye devam eder.
 
 ## Yerelde çalıştırma
 
@@ -80,15 +94,16 @@ Ardından http://localhost:8000 adresini açın.
 
 ## Yazı tipleri
 
-Hepsi Google Fonts üzerinden yüklenir.
+Yazı tipleri `assets/fonts/` klasöründen, sitenin kendi sunucusundan yüklenir (lisans: SIL OFL 1.1).
 
 - **Inter Tight:** başlıklar
 - **Manrope:** metinler, menü ve düğmeler
-- **Fraunces:** yalnızca “BMA” logo rozeti ve alt bölümdeki italik slogan vurgusu
+- **Fraunces:** yalnızca “BMA” logo rozeti ve alt bölümdeki italik slogan. Dosya boyutunu küçültmek için sadece bu harfleri içerir. Bu yazı tipiyle yeni bir metin yazılacaksa dosyanın yeniden üretilmesi gerekir.
 
 ## Notlar
 
 - Teklif formu bir sunucuya veri göndermez. Ziyaretçi KVKK onay kutusunu işaretleyip “Gönder”e basınca kendi e-posta uygulaması hazır bir taslakla açılır. Formun doğrudan gelen kutusuna düşmesini isterseniz Formspree gibi bir form servisi bağlayabilirsiniz. Bu durumda `kvkk.html` içindeki aktarım bölümü de güncellenmelidir.
 - `kvkk.html` genel bir şablondur. Veri sorumlusu olarak şirketin resmî unvanı ve adresi eklenmeli, metin bir hukukçuya kontrol ettirilmelidir.
 - “Seçilmiş çalışmalar” bölümündeki projeler ve rakamlar örnek içeriktir. Gerçek projelerle değiştirilmelidir.
+- Açılış perdesi korunmuştur. Başlık ve açıklama perdenin arkasında hemen çizilir, böylece Google’ın hız ölçümü (LCP) perdeyi beklemez.
 - Animasyonlar, işletim sisteminde “hareketi azalt” ayarı açık olan ziyaretçilerde otomatik olarak kapanır.

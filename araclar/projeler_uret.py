@@ -255,7 +255,12 @@ def kart_gorsel(p):
             f'</svg>')
 
 # ---------------- CSS ----------------
-PROJE_CSS = """:root{--bg:#F4EDE0;--surface:#FFFAF0;--ink:#15090C;--muted:#6B5A5C;--line:#DDD0BC;--wine:#7A1730;--wine2:#A62644;--dk:#0C0607;--cream:#F4EDE0;--cm:#B9A9A0}
+PROJE_CSS = """@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500 700;font-display:swap;src:url(../assets/fonts/inter-tight-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500 700;font-display:swap;src:url(../assets/fonts/inter-tight-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 700;font-display:swap;src:url(../assets/fonts/manrope-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 700;font-display:swap;src:url(../assets/fonts/manrope-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:600;font-display:swap;src:url(../assets/fonts/fraunces-bma.woff) format('woff')}
+:root{--bg:#F4EDE0;--surface:#FFFAF0;--ink:#15090C;--muted:#6B5A5C;--line:#DDD0BC;--wine:#7A1730;--wine2:#A62644;--dk:#0C0607;--cream:#F4EDE0;--cm:#B9A9A0}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Manrope,system-ui,sans-serif;overflow-x:hidden}
@@ -290,7 +295,7 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:600}
 .box h3{font-size:1.25rem;margin-bottom:10px}.box p{color:var(--muted)}
 .persona{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;margin-top:36px;background:var(--dk);color:var(--cream);border-radius:22px;padding:34px}
 .persona b{font:600 1.3rem "Inter Tight",sans-serif;display:block}.persona small{color:var(--cm)}
-.persona q{display:block;margin-top:14px;font:italic 400 1.25rem/1.5 Fraunces,Georgia,serif;color:var(--cream)}
+.persona q{display:block;margin-top:14px;font:500 1.2rem/1.5 "Inter Tight",system-ui,sans-serif;letter-spacing:-.01em;color:var(--cream)}
 .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
 .feat div{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
 .feat i{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:var(--pa);color:var(--pl);font:700 .9rem "Inter Tight",sans-serif;font-style:normal;margin-bottom:14px}
@@ -325,7 +330,7 @@ footer{background:var(--dk);color:var(--cm);padding:26px 0;font-size:.85rem}foot
 """
 
 MARK = '<svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30"/><text x="32" y="37" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-weight="600" font-size="19" letter-spacing="1">BMA</text><path class="acc" d="M32 43l3.2 3.5L32 50l-3.2-3.5z"/></svg>'
-FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Inter+Tight:wght@500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">'
+FONTS = '<link rel="preload" href="../assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="../assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>'
 
 def sayfa(i, p):
     c = p["renk"]; n = len(P); onc, son = P[(i - 1) % n], P[(i + 1) % n]
