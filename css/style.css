@@ -2,8 +2,8 @@
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:inherit}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Manrope,system-ui,sans-serif;overflow-x:hidden}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;margin:0;line-height:1.05;letter-spacing:-.025em}
-h1{font-size:clamp(2.8rem,8vw,6.4rem);font-weight:800}
+h1,h2,h3{font-family:"Inter Tight",system-ui,sans-serif;margin:0;line-height:1.08;letter-spacing:-.022em}
+h1{font-size:clamp(2.8rem,8vw,6.4rem);font-weight:600;line-height:1.04}
 h2{font-size:clamp(2rem,4.4vw,3.4rem);font-weight:600}
 h3{font-size:1.5rem;font-weight:600}
 p{margin:0}a{color:inherit}
@@ -34,7 +34,7 @@ body.ready #curtain .mark,body.ready #curtain .cw{opacity:0!important;animation:
 header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .4s,backdrop-filter .4s}
 header.solid{background:rgba(12,6,7,.82);backdrop-filter:blur(14px)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;color:var(--cream)}
-.logo{font:800 1.7rem Fraunces,serif;text-decoration:none;letter-spacing:-.03em;display:flex;align-items:center;gap:10px}.mark{width:46px;height:46px;fill:none;stroke:currentColor;stroke-width:1.6;overflow:visible}.mark text{fill:currentColor;stroke:none}.acc{fill:var(--wine2);stroke:none;transform-box:fill-box;transform-origin:center;transition:transform .6s cubic-bezier(.3,1.6,.4,1)}.logo:hover .acc{transform:rotate(180deg) scale(1.5)}.logo:hover .ring{stroke:var(--wine2)}.ring{transition:stroke .4s}.logo span{font:700 .95rem Manrope,sans-serif;letter-spacing:.34em}.logo i{color:var(--wine2);font-style:normal}
+.logo{font:800 1.7rem "Inter Tight",system-ui,sans-serif;text-decoration:none;letter-spacing:-.03em;display:flex;align-items:center;gap:10px}.mark{width:46px;height:46px;fill:none;stroke:currentColor;stroke-width:1.6;overflow:visible}.mark text{fill:currentColor;stroke:none}.acc{fill:var(--wine2);stroke:none;transform-box:fill-box;transform-origin:center;transition:transform .6s cubic-bezier(.3,1.6,.4,1)}.logo:hover .acc{transform:rotate(180deg) scale(1.5)}.logo:hover .ring{stroke:var(--wine2)}.ring{transition:stroke .4s}.logo span{font:700 .95rem Manrope,sans-serif;letter-spacing:.34em}.logo i{color:var(--wine2);font-style:normal}
 nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
 nav a{text-decoration:none;font-weight:500;font-size:.95rem;opacity:.8;transition:opacity .3s}nav a:hover{opacity:1}
 /* hero */
@@ -52,7 +52,7 @@ body.ready .hero h1 em{transform:none}body.ready .hero h1 span:nth-child(2) em{t
 .p1{left:0;top:30px;transform:rotate(-6deg);animation:bob 6s ease-in-out infinite alternate}
 .p2{right:0;top:0;transform:rotate(5deg);animation:bob 7s 1s ease-in-out infinite alternate}
 @keyframes bob{to{translate:0 -16px}}
-.scr b{display:block;font:600 22px Fraunces,serif;margin:4px 0 12px}
+.scr b{display:block;font:600 22px "Inter Tight",system-ui,sans-serif;margin:4px 0 12px}
 .bars{display:flex;align-items:flex-end;gap:6px;height:90px;margin:10px 0}
 .bars i{flex:1;background:linear-gradient(var(--wine2),#5a1022);border-radius:4px 4px 0 0;transform-origin:bottom;animation:grow 1.4s cubic-bezier(.2,.8,.2,1) both}
 @keyframes grow{from{transform:scaleY(0)}}
@@ -67,7 +67,7 @@ body.ready .hero h1 em{transform:none}body.ready .hero h1 span:nth-child(2) em{t
 .mq:hover div{animation-play-state:paused}
 /* marquee */
 .mq{border-block:1px solid #2c171c;background:var(--dk2);overflow:hidden;color:var(--cream)}
-.mq div{display:flex;gap:56px;width:max-content;padding:20px 0;animation:mq 34s linear infinite;font:600 1.3rem Fraunces,serif;white-space:nowrap}
+.mq div{display:flex;gap:56px;width:max-content;padding:20px 0;animation:mq 34s linear infinite;font:600 1.3rem "Inter Tight",system-ui,sans-serif;white-space:nowrap}
 .mq span::after{content:"✦";color:var(--wine2);margin-left:56px}
 @keyframes mq{to{transform:translateX(-50%)}}
 /* reveal */
@@ -80,7 +80,7 @@ body.ready .hero h1 em{transform:none}body.ready .hero h1 span:nth-child(2) em{t
 .vm div:hover{transform:translateY(-8px);border-color:var(--wine2)}
 .vm h3{color:var(--wine);margin-bottom:14px;font-size:1.9rem}.vm p{color:var(--muted)}
 .vals{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
-.vals div{border-top:2px solid var(--wine2);padding-top:14px}.vals b{font:600 1.2rem Fraunces,serif;display:block}.vals span{color:var(--muted);font-size:.92rem}
+.vals div{border-top:2px solid var(--wine2);padding-top:14px}.vals b{font:600 1.2rem "Inter Tight",system-ui,sans-serif;display:block}.vals span{color:var(--muted);font-size:.92rem}
 /* services */
 .svc{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px}
 .card{background:var(--dk2);border:1px solid #33191f;border-radius:28px;padding:40px;position:relative;overflow:hidden;transition:transform .5s,border-color .5s}
@@ -96,7 +96,7 @@ body.ready .hero h1 em{transform:none}body.ready .hero h1 span:nth-child(2) em{t
 .art{height:220px;display:grid;place-items:center;position:relative;overflow:hidden}
 .art svg{width:100%;height:100%;transition:transform .8s cubic-bezier(.2,.8,.2,1)}.work:hover .art svg{transform:scale(1.08)}
 .wb{padding:22px 24px 26px}.wb small{color:var(--wine);font-weight:700;font-size:.8rem}.wb h3{font-size:1.3rem;margin:4px 0 8px}.wb p{color:var(--muted);font-size:.93rem}
-.met{margin-top:14px;font:600 1.5rem Fraunces,serif;color:var(--wine)}.met span{font:500 .82rem Manrope,sans-serif;color:var(--muted);margin-left:6px}
+.met{margin-top:14px;font:600 1.5rem "Inter Tight",system-ui,sans-serif;color:var(--wine)}.met span{font:500 .82rem Manrope,sans-serif;color:var(--muted);margin-left:6px}
 /* process */
 .pr{margin-top:56px;display:grid;grid-template-columns:repeat(5,1fr);position:relative}
 .pr::before{content:"";position:absolute;top:17px;left:0;right:0;height:2px;background:#33191f}
@@ -109,12 +109,12 @@ body.ready .hero h1 em{transform:none}body.ready .hero h1 span:nth-child(2) em{t
 .sec{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
 .sec span{border:1px solid var(--line);padding:10px 20px;border-radius:99px;transition:background .3s,color .3s,transform .3s}.sec span:hover{background:var(--wine);color:#fff;transform:translateY(-3px)}
 details{border-bottom:1px solid var(--line);padding:22px 0}
-summary{cursor:pointer;font:600 1.25rem Fraunces,serif;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary{cursor:pointer;font:600 1.25rem "Inter Tight",system-ui,sans-serif;list-style:none;display:flex;justify-content:space-between;gap:16px}
 summary::after{content:"+";color:var(--wine);font-size:1.6rem;line-height:1;transition:transform .4s}details[open] summary::after{transform:rotate(45deg)}
 details p{color:var(--muted);margin-top:10px;max-width:70ch}.faq{margin-top:34px;max-width:860px}
-.big{font:800 clamp(2.4rem,7vw,5.6rem) Fraunces,serif;line-height:1;letter-spacing:-.03em}
+.big{font:600 clamp(2.4rem,7vw,5.6rem) "Inter Tight",system-ui,sans-serif;line-height:1.02;letter-spacing:-.022em}
 .cg{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-.mail{font:600 1.5rem Fraunces,serif;color:var(--cream);text-decoration:underline;text-underline-offset:6px;word-break:break-all}
+.mail{font:600 1.5rem "Inter Tight",system-ui,sans-serif;color:var(--cream);text-decoration:underline;text-underline-offset:6px;word-break:break-all}
 .qf{background:var(--dk);color:var(--cream);border-radius:24px;padding:32px;display:grid;gap:16px}
 .qf label{display:grid;gap:6px;font-size:.9rem;color:var(--cm)}
 .qf input,.qf select,.qf textarea{font:inherit;color:var(--cream);background:#1A0C10;border:1px solid #3A2128;border-radius:12px;padding:12px 14px;width:100%}
@@ -131,19 +131,11 @@ details p{color:var(--muted);margin-top:10px;max-width:70ch}.faq{margin-top:34px
 .ft a{text-decoration:none;transition:color .3s}.ft a:hover{color:var(--cream)}
 .ft-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:56px}
 .ft .logo{color:var(--cream);font-size:1rem}
-.ft-tag{font:400 clamp(1.6rem,3vw,2.3rem)/1.15 Fraunces,serif;color:var(--cream);margin-top:26px;letter-spacing:-.02em}
-.ft-tag em{font-style:italic;color:#D9667F}
+.ft-tag{font:500 clamp(1.6rem,3vw,2.3rem)/1.15 "Inter Tight",system-ui,sans-serif;color:var(--cream);margin-top:26px;letter-spacing:-.02em}
+.ft-tag em{font:italic 400 1em Fraunces,Georgia,serif;color:#D9667F}
 .ft-col{display:flex;flex-direction:column;gap:10px}.ft-col b{font:700 .75rem Manrope,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#7d6a6c;margin-bottom:6px}
 .ft-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid #2c171c;padding-top:22px;padding-bottom:30px;font-size:.85rem}
 .up{color:var(--cream)}
-.ft-sig{text-align:center;padding-bottom:48px}
-.sig{display:flex;align-items:center;gap:28px;justify-content:center}.sig i{flex:1;max-width:220px;height:1px;background:linear-gradient(90deg,transparent,#6a2434)}.sig i:last-child{transform:scaleX(-1)}
-.sig span{font:italic 400 clamp(3.4rem,9vw,7rem)/1 Fraunces,serif;letter-spacing:-.03em;background:linear-gradient(180deg,#F4EDE0 30%,#A62644);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .08em .12em}
-.sig-sub{font:700 .75rem Manrope,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#7d6a6c;margin-top:10px}
-.sig-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:34px}
-.ft-badge{display:flex;flex-direction:column;align-items:center;gap:6px;padding-bottom:56px}
-.fbadge{width:120px;height:120px}.fbadge .spin{transform-origin:60px 60px;animation:sp 22s linear infinite}
-.ft-mail{margin-top:18px;color:var(--cream);font:600 1.15rem Fraunces,serif;text-decoration:underline!important;text-underline-offset:6px}
 @media (max-width:900px){.ft-top{grid-template-columns:1fr 1fr}.ft-brand{grid-column:1/-1}}
 /* mobil menü */
 .nr{display:flex;align-items:center;gap:10px}
@@ -154,7 +146,7 @@ body.mo .mnu i:first-child{top:21px;transform:rotate(45deg)}body.mo .mnu i:last-
 .mm{position:fixed;inset:0;z-index:45;background:var(--dk);color:var(--cream);display:flex;flex-direction:column;justify-content:space-between;padding:110px 28px calc(36px + env(safe-area-inset-bottom,0px));clip-path:circle(0 at calc(100% - 46px) 36px);visibility:hidden;transition:clip-path .65s cubic-bezier(.77,0,.18,1),visibility 0s .65s}
 body.mo .mm{clip-path:circle(150% at calc(100% - 46px) 36px);visibility:visible;transition:clip-path .65s cubic-bezier(.77,0,.18,1)}
 .mm nav{display:flex;flex-direction:column}
-.mm nav a{display:flex;align-items:baseline;gap:16px;font:600 clamp(2rem,9vw,2.6rem)/1.1 Fraunces,serif;letter-spacing:-.02em;text-decoration:none;padding:14px 0;border-bottom:1px solid #2c171c;opacity:0;transform:translateY(24px);transition:opacity .4s,transform .5s cubic-bezier(.2,.8,.2,1)}
+.mm nav a{display:flex;align-items:baseline;gap:16px;font:600 clamp(2rem,9vw,2.6rem)/1.1 "Inter Tight",system-ui,sans-serif;letter-spacing:-.02em;text-decoration:none;padding:14px 0;border-bottom:1px solid #2c171c;opacity:0;transform:translateY(24px);transition:opacity .4s,transform .5s cubic-bezier(.2,.8,.2,1)}
 .mm nav a small{font:700 .72rem Manrope,sans-serif;letter-spacing:.2em;color:var(--wine2)}
 body.mo .mm nav a{opacity:1;transform:none}
 body.mo .mm nav a:nth-child(1){transition-delay:.18s}body.mo .mm nav a:nth-child(2){transition-delay:.24s}body.mo .mm nav a:nth-child(3){transition-delay:.3s}body.mo .mm nav a:nth-child(4){transition-delay:.36s}body.mo .mm nav a:nth-child(5){transition-delay:.42s}
