@@ -23,10 +23,31 @@ Web_Sitesi/
 ├── css/style.css                 Renkler, yazı stilleri, animasyonlar
 ├── js/main.js                    Açılış, mobil menü, kaydırma animasyonları, teklif formu
 ├── assets/                       Logo dosyaları (SVG) ve favicon
+├── projeler/                     6 ürün konseptinin detay sayfaları ve proje.css
+├── araclar/projeler_uret.py      Proje kartlarını ve detay sayfalarını üreten betik
 ├── google7608ff42e5855037.html   Google Search Console doğrulama dosyası (silmeyin)
+├── .vercelignore                 araclar/ klasörünün yayına çıkmasını engeller
 ├── .nojekyll
 └── README.md
 ```
+
+## Proje sayfalarını düzenleme
+
+Ana sayfadaki “Seçilmiş çalışmalar” kartları ve `projeler/` altındaki sayfalar elle değil, `araclar/projeler_uret.py` betiğiyle üretilir. Bir projenin metnini, rengini, özelliklerini veya ekran içeriğini değiştirmek için:
+
+1. `araclar/projeler_uret.py` içinde ilgili projeyi bulun:
+   - Proje bilgileri ve renkler: `P` listesi
+   - Telefon ekranlarındaki isimler ve tutarlar: `EKRAN_VERI`
+   - Kart ve giriş arka plan renkleri: `KART_TEMALARI["b"]`
+2. Depo klasöründe şu komutu çalıştırın:
+
+   ```bash
+   python araclar/projeler_uret.py .
+   ```
+
+3. Değişen dosyaları GitHub’a gönderin. Vercel siteyi otomatik günceller.
+
+Betik `index.html` içindeki kart bölümünü ve `projeler/` klasörünü yeniden yazar. Bu alanlarda elle yapılan değişiklikler bir sonraki çalıştırmada kaybolur.
 
 ## Yerelde çalıştırma
 
