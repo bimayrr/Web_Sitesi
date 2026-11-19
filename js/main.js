@@ -19,6 +19,14 @@ hero.addEventListener("mouseenter",function(){r=hero.getBoundingClientRect()});
 hero.addEventListener("mousemove",function(e){if(!r)r=hero.getBoundingClientRect();mx=(e.clientX-r.left)/r.width-.5;my=(e.clientY-r.top)/r.height-.5;
 if(!pt){pt=true;requestAnimationFrame(function(){pt=false;hero.style.setProperty("--px",mx.toFixed(3));hero.style.setProperty("--py",my.toFixed(3))})}});
 addEventListener("resize",function(){r=null},{passive:true});addEventListener("scroll",function(){r=null},{passive:true})}
+/* proje kartı çizimleri: bölüme yaklaşınca ayrı dosyadan yüklenir (ilk açılışı hafifletir) */
+var arts=document.querySelectorAll(".art[data-art]"),yuklendi=false;
+function kartYukle(){if(yuklendi)return;yuklendi=true;fetch("projeler/kartlar.json").then(function(x){return x.json()}).then(function(d){
+requestAnimationFrame(function(){arts.forEach(function(a){if(d[a.getAttribute("data-art")])a.innerHTML=d[a.getAttribute("data-art")]})})}).catch(function(){yuklendi=false})}
+if(arts.length){var cal=document.getElementById("calismalar");
+if("IntersectionObserver" in window&&cal){var ko=new IntersectionObserver(function(es){if(es[0].isIntersecting){ko.disconnect();kartYukle()}},{rootMargin:"900px 0px"});ko.observe(cal)}
+else addEventListener("load",kartYukle);
+if(location.hash==="#calismalar")kartYukle()}
 /* görünür olunca beliren bölümler */
 var els=document.querySelectorAll(".rv");
 if("IntersectionObserver" in window){

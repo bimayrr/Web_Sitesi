@@ -419,11 +419,14 @@ for i, p in enumerate(P):
     (ROOT / "projeler" / f'{p["slug"]}.html').write_text(sayfa(i, p), encoding="utf-8")
 
 # ana sayfa kartları
+# Kart çizimleri ana sayfayı ağırlaştırmasın diye ayrı dosyada; js/main.js bölüme yaklaşınca yükler.
+import json
+(ROOT / "projeler" / "kartlar.json").write_text(json.dumps({p["slug"]: kart_gorsel(p) for p in P}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 cards = []
 for i, p in enumerate(P):
     d = ["", " d1", " d2"][i % 3]
     t, v = p["kpi"][0]
-    cards.append(f'<a class="work rv{d}" href="projeler/{p["slug"]}.html"><div class="art">{kart_gorsel(p)}</div>'
+    cards.append(f'<a class="work rv{d}" href="projeler/{p["slug"]}.html"><div class="art" data-art="{p["slug"]}" style="background:{kart_renk(p)[0]}"></div>'
                  f'<div class="wb"><small>{e(p["sektor"])} · {e(p["platform"])}</small><h3>{e(p["ad"])}</h3><p>{e(p["ozet"])}</p>'
                  f'<div class="met">{e(v)}<span>hedef · {e(t.lower())}</span></div><span class="more">Projeyi incele <b>→</b></span></div></a>')
 idx = ROOT / "index.html"; s = idx.read_text(encoding="utf-8")
