@@ -1,15 +1,29 @@
 # Bimayr | Apps & Data Studio
 
-Bimayr’in tanıtım sitesi. Saf HTML, CSS ve JavaScript ile yazıldı. Kurulum veya derleme gerektirmez.
+Bimayr’in kurumsal tanıtım sitesi: **https://www.bimayr.com**
+
+Saf HTML, CSS ve JavaScript ile yazıldı. Kurulum veya derleme gerektirmez.
+
+## Yayın
+
+| Parça | Nerede |
+| --- | --- |
+| Alan adı | Hostinger (`bimayr.com`, otomatik yenileme açık) |
+| Barındırma | Vercel, bu depoya bağlı |
+| Kaynak kod | Bu depo, `main` dalı |
+
+`main` dalına gönderilen her değişiklik birkaç dakika içinde Vercel tarafından otomatik olarak bimayr.com’da yayınlanır. Ayrıca bir işlem gerekmez.
 
 ## Klasör yapısı
 
 ```
-bimayr-site/
-├── index.html          Sayfa yapısı ve içerik
-├── css/style.css       Renkler, yazı stilleri ve animasyonlar
-├── js/main.js          Açılış perdesi, kaydırma animasyonları, teklif formu
-├── assets/             Logo dosyaları (SVG) ve favicon
+Web_Sitesi/
+├── index.html                    Ana sayfa: yapı ve içerik
+├── kvkk.html                     KVKK Aydınlatma Metni sayfası
+├── css/style.css                 Renkler, yazı stilleri, animasyonlar
+├── js/main.js                    Açılış, mobil menü, kaydırma animasyonları, teklif formu
+├── assets/                       Logo dosyaları (SVG) ve favicon
+├── google7608ff42e5855037.html   Google Search Console doğrulama dosyası (silmeyin)
 ├── .nojekyll
 └── README.md
 ```
@@ -19,20 +33,10 @@ bimayr-site/
 `index.html` dosyasını tarayıcıda açmanız yeterli. İsterseniz yerel sunucu da kullanabilirsiniz:
 
 ```bash
-python3 -m http.server 8000
+python -m http.server 8000
 ```
 
 Ardından http://localhost:8000 adresini açın.
-
-## GitHub Pages ile yayınlama
-
-1. GitHub’da yeni bir depo (repository) oluşturun, örneğin `bimayr-site`.
-2. Bu klasördeki tüm dosyaları depoya yükleyin.
-3. **Settings → Pages** bölümünde **Source** olarak **Deploy from a branch** seçin.
-4. Branch olarak `main`, klasör olarak `/ (root)` seçip kaydedin.
-5. Birkaç dakika sonra site `https://KULLANICI_ADI.github.io/bimayr-site/` adresinde yayında olur.
-
-Kendi alan adınızı bağlamak için aynı sayfadaki **Custom domain** alanını kullanın.
 
 ## Düzenleme rehberi
 
@@ -40,8 +44,9 @@ Kendi alan adınızı bağlamak için aynı sayfadaki **Custom domain** alanın�
 | --- | --- |
 | Metinler, projeler, SSS | `index.html` |
 | Renkler | `css/style.css` içindeki `:root` değişkenleri |
-| E-posta adresi | `index.html` içinde `bimayrr@gmail.com` ve `js/main.js` içindeki form kodu |
+| E-posta adresi | `index.html`, `kvkk.html` ve `js/main.js` içindeki `bimayrr@gmail.com` |
 | Logo | `assets/` klasörü ve `index.html` içindeki `.mark` SVG’leri |
+| KVKK metni | `kvkk.html` |
 
 ## Renkler
 
@@ -54,9 +59,15 @@ Kendi alan adınızı bağlamak için aynı sayfadaki **Custom domain** alanın�
 
 ## Yazı tipleri
 
-Başlıklar için **Fraunces**, metinler için **Manrope**. İkisi de Google Fonts üzerinden yüklenir.
+Hepsi Google Fonts üzerinden yüklenir.
+
+- **Inter Tight:** başlıklar
+- **Manrope:** metinler, menü ve düğmeler
+- **Fraunces:** yalnızca “BMA” logo rozeti ve alt bölümdeki italik slogan vurgusu
 
 ## Notlar
 
-- Teklif formu bir sunucuya veri göndermez. “Gönder” düğmesine basınca ziyaretçinin e-posta uygulaması hazır bir taslakla açılır. Formun doğrudan gelen kutusuna düşmesini isterseniz Formspree gibi bir form servisi bağlayabilirsiniz.
-- “Seçilmiş çalışmalar” bölümündeki projeler ve rakamlar örnek içeriktir. Yayına almadan önce gerçek projelerinizle değiştirin.
+- Teklif formu bir sunucuya veri göndermez. Ziyaretçi KVKK onay kutusunu işaretleyip “Gönder”e basınca kendi e-posta uygulaması hazır bir taslakla açılır. Formun doğrudan gelen kutusuna düşmesini isterseniz Formspree gibi bir form servisi bağlayabilirsiniz. Bu durumda `kvkk.html` içindeki aktarım bölümü de güncellenmelidir.
+- `kvkk.html` genel bir şablondur. Veri sorumlusu olarak şirketin resmî unvanı ve adresi eklenmeli, metin bir hukukçuya kontrol ettirilmelidir.
+- “Seçilmiş çalışmalar” bölümündeki projeler ve rakamlar örnek içeriktir. Gerçek projelerle değiştirilmelidir.
+- Animasyonlar, işletim sisteminde “hareketi azalt” ayarı açık olan ziyaretçilerde otomatik olarak kapanır.
