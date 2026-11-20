@@ -3,7 +3,7 @@ Kullanım (depo klasöründe): python araclar/surumle.py .
 Site dosyalarında (css/js/proje.css) her değişiklikten sonra çalıştırın."""
 import sys, re, hashlib, pathlib
 R = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
-pat = re.compile(r'((?:href|src)=")((?:\.\./)?(?:css/style\.css|js/main\.js)|proje\.css)(?:\?v=[0-9a-f]+)?(")')
+pat = re.compile(r'((?:href|src)=")((?:\.\./)?(?:css/style\.css|js/main\.js|js/izin\.js)|proje\.css)(?:\?v=[0-9a-f]+)?(")')
 n = 0
 for h in [R / "index.html", R / "kvkk.html", *sorted((R / "projeler").glob("*.html"))]:
     if not h.exists(): continue

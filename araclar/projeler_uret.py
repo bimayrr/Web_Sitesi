@@ -407,7 +407,8 @@ def sayfa(i, p):
 
 <div class="wrap pn"><a href="{onc["slug"]}.html"><span>←</span><span><small>Önceki</small><b>{e(onc["ad"])}</b></span></a><a href="{son["slug"]}.html"><span><small>Sonraki</small><b>{e(son["ad"])}</b></span><span>→</span></a></div>
 </main>
-<footer><div class="wrap"><span>© 2026 Bimayr · Apps &amp; Data Studio</span><a href="../kvkk.html">KVKK Aydınlatma Metni</a></div></footer>
+<footer><div class="wrap"><span>© 2026 Bimayr · Apps &amp; Data Studio</span><span><a href="../kvkk.html">KVKK Aydınlatma Metni</a> · <a href="#cerez-tercihi">Çerez tercihleri</a></span></div></footer>
+<script src="../js/izin.js" defer></script>
 </body>
 </html>
 """

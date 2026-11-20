@@ -22,6 +22,7 @@ Web_Sitesi/
 ├── kvkk.html                     KVKK Aydınlatma Metni sayfası
 ├── css/style.css                 Renkler, yazı stilleri, animasyonlar
 ├── js/main.js                    Açılış, mobil menü, kaydırma animasyonları, teklif formu
+├── js/izin.js                    Çerez izni kutusu + Microsoft Clarity (yalnızca izinle yüklenir)
 ├── assets/                       Logo dosyaları (SVG) ve favicon
 ├── assets/fonts/                 Siteye gömülü yazı tipleri (Google’a bağlantı yok)
 ├── projeler/                     6 ürün konseptinin detay sayfaları ve proje.css
@@ -101,6 +102,8 @@ Yazı tipleri `assets/fonts/` klasöründen, sitenin kendi sunucusundan yükleni
 - **Fraunces:** yalnızca “BMA” logo rozeti ve alt bölümdeki italik slogan. Dosya boyutunu küçültmek için sadece bu harfleri içerir. Bu yazı tipiyle yeni bir metin yazılacaksa dosyanın yeniden üretilmesi gerekir.
 
 ## Notlar
+
+- **Microsoft Clarity** (proje: Bimayr, kimlik `zgn5gpjw9l`) ziyaretçi “Kabul et” derse yüklenir; “Hayır, teşekkürler” denirse hiç yüklenmez. Tercih tarayıcıda saklanır, alt bölümdeki “Çerez tercihleri” bağlantısıyla değiştirilebilir. Clarity’ye eklenen her yeni izleme özelliği KVKK metninin 8. bölümüne de yansıtılmalıdır.
 
 - Teklif formu bir sunucuya veri göndermez. Ziyaretçi KVKK onay kutusunu işaretleyip “Gönder”e basınca kendi e-posta uygulaması hazır bir taslakla açılır. Formun doğrudan gelen kutusuna düşmesini isterseniz Formspree gibi bir form servisi bağlayabilirsiniz. Bu durumda `kvkk.html` içindeki aktarım bölümü de güncellenmelidir.
 - `kvkk.html` genel bir şablondur. Veri sorumlusu olarak şirketin resmî unvanı ve adresi eklenmeli, metin bir hukukçuya kontrol ettirilmelidir.
